@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHS Flocking - Backend</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/flock.css">
+    <link rel="stylesheet" href="../css/backend.css">
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCre3swIR5kW1SRxwfKgR51Sxumg1I-BpA"></script>
+    <script src="../js/backend.js"></script>
+</head>
+<body>
+    <div class="row contain">
+        <div class="col s12 m10 offset-m1">
+            <div class="col s12 m12 nav">
+                <h4 class="col m8">Flock Statuses</h4>
+                <a class="col m2 modal-trigger" href="#modal1">Add Address</a>
+                <a class="col m2" href="">View Flock List</a>
+            </div>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Add an Address</h4>
+                  <input type="text" placeholder="Add an Address" id="addressInput">
+                  <span class="col m12">Addresses add here will be added directly into <b>To Be Flocked</b></span>
+                  <button id="submitAddress" class="col m4">Add Address</button>
+                </div>
+            </div>
+            <div class="col s12 m12 visiting">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col m6">Visiting</th>
+                            <th class="col m2">Flock ID</th>
+                            <th class="col m2">View on Map</th>
+                            <th class="col m2">Migrate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col s12 m12 toBeFlocked"></div>
+            <div class="col s12 m12 waitlist"></div>
+        </div>
+    </div>
+
+    <!-- <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDmGzib6yVhgjva6k42SHMisKUOz46hw_A",
+          authDomain: "flocking-management-system.firebaseapp.com",
+          projectId: "flocking-management-system",
+          storageBucket: "flocking-management-system.appspot.com",
+          messagingSenderId: "1015768786861",
+          appId: "1:1015768786861:web:a8e30c3d2ebc443935e324"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      </script> -->
+</body>
+</html>

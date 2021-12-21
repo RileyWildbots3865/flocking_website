@@ -1,0 +1,23 @@
+{
+  "name": "Flocking-Management-System",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airsoarer/Flocking-Management-System.git"
+  },
+  "keywords": [],
+  "author": "Matthew Williams II",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airsoarer/Flocking-Management-System/issues"
+  },
+  "homepage": "https://github.com/airsoarer/Flocking-Management-System#readme",
+  "dependencies": {
+    "firebase": "^9.6.1"
+  }
+}

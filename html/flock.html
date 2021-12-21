@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHS Flocking - Flock Someone</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/flock.css">
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../js/flock.js"></script>
+</head>
+<body>
+    <div class="row contain">
+        <div class="col s12 m10 offset-m1">
+            <h2>Where should the flock go next?</h2>
+        </div>
+        <div class="col s12 m8 offset-m2 addressHolder">
+            <div class="col s12 m12 address">
+                <h4>Enter your Address</h4>
+                <input type="text" class="col s12 m12 addressInput" id="userAddress">
+            </div>
+            <div class="col s12 m12 address">
+                <h4>Enter the Address to be Flocked</h4>
+                <input type="text" class="col s12 m12 addressInput" id="flockeeAddress">
+            </div>
+            <p>
+                <label>
+                  <input id="multiple" type="checkbox" />
+                  <span>I would like to Flock more than one Address <br>(Note: Any additional addresses will be put on a waitlist before being flocked)</span>
+                </label>
+            </p>
+            <button class="col m3 submit">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
