@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHS Flocking - Backend</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/flock.css">
+    <link rel="stylesheet" href="../css/backend.css">
+    <link rel="stylesheet" href="../css//manageFlock.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCre3swIR5kW1SRxwfKgR51Sxumg1I-BpA"></script>
+    <script type="module" src="../js/backend.js"></script>
+    <script type="module" src="../js/manageFlock.js"></script>
+</head>
+<body>
+    <div class="row contain">
+        <div class="col s12 m10 offset-m1">
+            <div class="col s12 m12 nav">
+                <a href="backend.html" style="margin-top: 23px;" class="col m6"><h4 style="margin-top: 0px !important;">Flocking Management System</h4></a>
+                <a class="col m2 offset-m1" href="managePeople.html">Manage People</a>
+                <a class="col m1" href="settings.html">Settings</a>
+                <button id="logout" class="col m1">Logout</button>
+            </div>
+            <div class="col s12 m12 flockInfo">
+                <!-- FID -->
+                <h4 class="col m4"><span>FID: </span><span id="fid" class="data"></span></h4>
+                <!-- Status -->
+                <h4 class="col m4 offset-m2"><span>Status: </span><span id="status" class="data"></span></h4>
+                <div>
+                    <div class="col m12 info">
+                        <div class="divide">
+                            <!-- Current Location -->
+                            <p class="col m6"><span>Current Location: <button class="editBtn" id="CurrentLocationEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="currentLocation" class="data"></span></p>
+                            <!-- Migration Location -->
+                            <p class="col m6"><span>Migration Location: <button class="editBtn" id="MigrationLocationEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="migrationLocation" class="data"></span></p>
+
+                            <div class="col m12">
+                                <!-- Current Location Edit -->
+                                <input type="text" class="col m6 edit" id="CurrentLocationEdit">
+                                <!-- Migration Location Edit -->
+                                <input type="text" class="col m6 edit" id="MigrationLocationEdit">
+                            </div>
+                        </div>
+                        <div class="divide">
+                            <!-- Arrival Date -->
+                            <p class="col m6"><span>Arrival Date: <button class="editBtn" id="ArrivalDateEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="arrivalDate" class="data"></span></p>
+                            <!-- Migration Date -->
+                            <p class="col m6"><span>Migration Date: <button class="editBtn" id="MigrationDateEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="migrationDate" class="data"></span></p>
+
+                            <div class="col m12">
+                                <!-- Arrival Date Edit -->
+                                <input type="date" class="col m6 edit" id="ArrivalDateEdit">
+                                <!-- Migration Date Edit -->
+                                <input type="date" class="col m6 edit" id="MigrationDateEdit">
+                            </div>
+                        </div>
+                        <div class="divide">
+                            <!-- Flocker -->
+                            <p class="col m6"><span>Flocker: <button class="editBtn" id="FlockerEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="flocker" class="data"></span></p>
+                            <!-- Flockee -->
+                            <p class="col m6"><span>Flockee: <button class="editBtn" id="FlockeeEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="flockee" class="data"></span></p>
+
+                            <div class="col m12">
+                                <!-- Flocker Edit -->
+                                <input type="text" class="col m6 edit" id="FlockerEdit">
+                                <!-- Flockee Edit -->
+                                <input type="text" class="col m6 edit" id="FlockeeEdit">
+                            </div>
+                        </div>
+                        <div class="divide">
+                            <!-- Flock Managers -->
+                            <p class="col m6"><span>Flock Manager(s): <a class="tooltipped" data-position="right" data-tooltip="Click Flock Manager name below to remove from manager list."><i class="material-icons tiny" style="color: black;">info</i></a> <button class="editBtn" id="FlockManagerEditBtn"><i class="material-icons tiny">edit</i></button><br></span><span id="flockManagers" class="data"></span></p>
+
+                            <div class="col m12">
+                                <!-- Flock Mangers Edit -->
+                                <input type="text" class="col m6 edit" id="FlockManagerEdit">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m12 map">
+                        <div class="col m6">
+                            <iframe src="" id="currentLocationMap" style="border:0" height="350" width="500" allowfullscreen></iframe>
+                            <span>CURRENT LOCATION</span>
+                        </div>
+                        <div class="col m6">
+                            <iframe src="" id="migrationLocationMap" style="border:0" height="350" width="500" allowfullscreen></iframe>
+                            <span style="display: none; color: red;" class="noMigration">NO MIGARIOTN LOCATION AS OF NOW</span>
+                            <span>MIGRATION LOCATION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="row">
+        <div class="row">
+            <div class="col m10 offset-m1">
+                <h4>Flocking Management System</h4>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

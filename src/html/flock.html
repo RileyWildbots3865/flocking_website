@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flocking Management System - Flock Someone</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/flock.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCre3swIR5kW1SRxwfKgR51Sxumg1I-BpA"></script>
+    <script type="module" src="../js/flock.js"></script>
+</head>
+<body>
+    <div class="row contain">
+        <div class="formContain">
+            <div class="col s12 m10 offset-m1">
+                <h2>Where should the flock go next?</h2>
+            </div>
+            <div class="col s12 m8 offset-m2 addressHolder">
+                <div class="col s12 m12 address">
+                    <h4>Enter your Address</h4>
+                    <input type="text" class="col s12 m12 addressInput" id="userAddress">
+                </div>
+                <div class="col s12 m12 address">
+                    <h4>Please Enter the Flock ID (FID)</h4>
+                    <span>Located on the resealable bag attached to the flock yard sign.</span>
+                    <input placeholder="Ex: 001" type="text" class="col s12 m12 addressInput" id="fid">
+                    <br><span class="red" style="display: none; color: red;">Please double check the FID on your flock</span>
+                </div>
+                <div class="col s12 m12 address">
+                    <h4>Enter the Address to be Flocked</h4>
+                    <input type="text" class="col s12 m12 addressInput" id="flockeeAddress">
+                    <br><span class="toBeFlocked" style="display: none; color: red;"></span>
+                </div>
+                <div class="col s12 m12 address">
+                    <h4>Enter Name of Flockee</h4>
+                    <input placeholder="Name Here" type="text" class="col s12 m12 addressInput" id="flockeeName">
+                </div>
+                <!-- <p>
+                    <label>
+                      <input id="multiple" type="checkbox" />
+                      <span>I would like to Flock more than one Address <br>(Note: Any additional addresses will be put on a waitlist before being flocked)</span>
+                    </label>
+                </p> -->
+                <button class="col m3 submit">Submit</button>
+            </div>
+        </div>
+        <div class="thankYou" style="display: none; margin-top: 25vh;">
+            <h2 class="col m10 offset-m1 center">Thank you for your support!!! <br>You're flock will migrate to your chosen flockee within the next couple of days!</h2>
+        </div>
+    </div>
+</body>
+</html>

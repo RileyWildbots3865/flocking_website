@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHS Flocking - Backend</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/flock.css">
+    <link rel="stylesheet" href="../css/backend.css">
+    <link rel="stylesheet" href="../css/managePeople.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCre3swIR5kW1SRxwfKgR51Sxumg1I-BpA"></script>
+    <script type="module" src="../js/backend.js"></script>
+    <script type="module" src="../js/managePeople.js"></script>
+</head>
+<body>
+    <div class="row contain">
+        <div class="col s12 m10 offset-m1">
+            <div class="col s12 m12 nav">
+                <a href="backend.html" style="margin-top: 23px;" class="col m6"><h4 style="margin-top: 0px !important;">Flocking Management System</h4></a>
+                <a class="col m2 offset-m2" href="">Manage People</a>
+                <a class="col m1" href="settings.html">Settings</a>
+                <button id="logout" class="col m1">Logout</button>
+            </div>
+            <div class="col s12 m12 people">
+                <h4>Manage People</h4>
+                <table>
+                    <thead>
+                        <tr style="height: 30px;">
+                            <th class="col m3">Name</th>
+                            <th class="col m2 center">Flock Reponsibilities</th>
+                            <th class="col m2 center">Can Drive</th>
+                            <th class="col m2 center">Has Vehicle</th>
+                            <th class="col m3 center"><span style="">Send Removal Email</span><a class="tooltipped" data-position="bottom" data-tooltip="Recieves email when flockees would like a flock removed immediately."><i class="material-icons tiny">info</i></a></th>
+                        </tr>
+                    </thead>
+                    <tbody id="peopleTableBody">
+                    </tbody>
+                </table>
+                <div class="modal" id="manageFlockModal">
+                    <div class="modal-content">
+                        <h5 id="name">Manage Flocks</h5>
+                        <h5 class="center-align">Flock Responsibilities:</h5>
+                        <p class="center-align" id="noFlocks">No Current Flock Responsibilities</p>
+                        <ul style="margin-bottom: 75px;" class="col m10 offset-m1" id="flockResponsibilites"></ul>
+
+                        <h5 class="center-align">Assign a Flock</h5>
+                        <ul class="col m10 offset-m1" id="availableFlocks"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="row">
+        <div class="row">
+            <div class="col m10 offset-m1">
+                <h4>Flocking Management System</h4>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

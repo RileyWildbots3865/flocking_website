@@ -1,0 +1,11 @@
+button {
+    margin-top: 20px;
+}
+
+button:active, button:focus{
+    background-color: none !important;
+}
+
+.loginFooter {
+
+}

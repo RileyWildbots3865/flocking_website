@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHS Flocking - Backend</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/flock.css">
+    <link rel="stylesheet" href="../css/backend.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCre3swIR5kW1SRxwfKgR51Sxumg1I-BpA"></script>
+    <script type="module" src="../js/backend.js"></script>
+</head>
+<body>
+    <div class="row contain">
+        <div class="col s12 m10 offset-m1">
+            <div class="col s12 m12 nav">
+                <h4 class="col m6">Flocking Management System</h4>
+                <a class="col m2 center offset-m1" href="managePeople.html">Manage People</a>
+                <a class="col m2 center" href="settings.html">Settings</a>
+                <button id="logout" class="col m1">Logout</button>
+            </div>
+            <div id="addressModal" class="modal">
+                <div class="modal-content">
+                  <h4>Add an Address</h4>
+                  <input type="text" placeholder="Add an Address" id="addressInput">
+                  <span class="col m12">Addresses add here will be added directly into <b>To Be Flocked</b></span>
+                  <button id="submitAddress" class="col m4">Add Address</button>
+                </div>
+            </div>
+            <h4 class="col m8 left">Flock Statuses</h4>
+            <a class="col m4 center modal-trigger" id="addAddress" href="#addressModal">Add Address</a>
+            <div class="col s12 m12 visiting table">
+                <h5>Visiting</h5>
+                <br>
+                <table>
+                    <thead>
+                        <tr style="height: 15px">
+                            <!-- <th class="col m2">Flock ID</th>
+                            <th class="col m8 center">Address</th>
+                            <th class="col m2">Manage Flock</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="visitingTableBody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col s12 m12 migrating table">
+                <h5>Migrating To</h5>
+                <br>
+                <table>
+                    <thead>
+                        <tr style="height: 15px">
+                            <!-- <th class="col m1">Flock ID</th>
+                            <th class="col m7 center">Address</th>
+                            <th class="col m2">Manage Flock</th>
+                            <th class="col m2">Move to Visiting</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="migratingTableBody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col s12 m12 nested table">
+                <h5>Nested</h5>
+                <br>
+                <table>
+                    <thead>
+                        <tr style="height: 15px">
+                            <!-- <th class="col m6">Flock ID</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="nestedTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer class="row">
+        <div class="row">
+            <div class="col m10 offset-m1">
+                <h4>Flocking Management System</h4>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

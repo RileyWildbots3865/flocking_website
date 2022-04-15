@@ -1,0 +1,69 @@
+span {
+    color: #585858ff;
+    font-weight: 800;;
+}
+
+.divide span {
+    font-size: 24px;
+}
+
+.divide p .data, h4 .data {
+    font-size: 16px;
+    color: #E4E4E4;
+    font-weight: 300;
+}
+
+h4 .data {
+    font-size: 34px;
+}
+
+.info {
+    height: auto;
+    padding-bottom: 50px !important;
+}
+
+.map {
+    padding-bottom: 50px !important;
+}
+
+.map div span {
+    font-size: 20px;
+}
+
+.divide {
+    margin-bottom: 20px !important;
+}
+
+.editBtn {
+    background-color: transparent;
+    height: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px !important;
+}
+
+.editBtn:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.edit {
+    visibility: hidden;
+    width: 45% !important;
+    margin-right: 40px !important;
+}
+
+.removeFlockManager {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    color: #E4E4E4;
+    height: 20px;
+}
+
+.removeFlockManager:hover {
+    color: #585858ff;
+    background-color: transparent;
+    font-weight: bold;
+    transition-duration: .2s;
+}
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHS Flocking - Backend</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/flock.css">
+    <link rel="stylesheet" href="../css/backend.css">
+    <link rel="stylesheet" href="../css/authentication.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCre3swIR5kW1SRxwfKgR51Sxumg1I-BpA"></script>
+    <script type="module" src="../js/auth.js"></script>
+</head>
+<body>
+    <div class="row contain">
+        <div class="col s12 m10 offset-m1">
+            <h3>Sign Up</h3>
+            <br><br>
+            <div style="margin-bottom: 0px;" class="row col m12">
+                <div style="padding-left: 0px !important;" class="row col m6">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname">
+                </div>
+                <div style="margin-left: 22px;" class="row col m6">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname">
+                </div>
+            </div>
+            <div class="row col m12">
+                <label for="email">Email</label>
+                <input type="text" id="email">
+            </div>
+            <div class="row col m12">
+                <label for="pass">Password</label>
+                <input type="password" id="pass">
+            </div>
+            <div class="row col m12">
+                <label for="rePass">Re-enter Password</label>
+                <input type="password" id="rePass">
+            </div>
+            <div class="row col m12">
+                <p>
+                    <label>
+                        <input id="drive" type="checkbox">
+                        <span>Can Drive?</span>
+                    </label>
+                </p>
+            </div>
+            <div class="row col m12">
+                <p>
+                    <label>
+                        <input id="vehicle" type="checkbox">
+                        <span>Has Vehicle?</span>
+                    </label>
+                </p>
+            </div>
+            <button class="col m4" id="signUp">Sign Up</button>
+        </div>
+    </div>
+    <footer class="row">
+        <div class="row">
+            <div class="col m10 offset-m1">
+                <h4>Flocking Management System</h4>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

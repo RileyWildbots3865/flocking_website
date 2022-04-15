@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/airsoarer/Flocking-Management-System#readme",
   "dependencies": {
-    "firebase": "^9.6.1"
+    "firebase": "^9.6.1",
+    "http-server": "^14.0.0",
+    "serve": "^13.0.2"
   }
 }

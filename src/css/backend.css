@@ -1,0 +1,131 @@
+@keyframes removal {
+    0% {
+        background-color: #e06666ff;
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+
+tr td {
+    height: 40px !important;
+}
+
+button {
+    margin-top: 50px;
+    margin-bottom: 25px !important;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active, button:focus {
+    background-color: transparent;
+}
+
+footer {
+    background-color: #585858ff;
+    height: 200px;
+    margin-bottom: 0px !important;
+}
+
+tr {
+    height: 50px;
+}
+
+td {
+    height: 25px;
+    padding-top: 12.5px !important;
+}
+
+#logout {
+    color: #E4E4E4;
+    background-color: transparent;
+    height: 20px;
+    margin-top: 33px;
+    margin-bottom: 0px !important;
+}
+
+/* Autocomplete Container Class */
+.pac-container {
+    z-index: 1051 !important
+}
+
+.modal-content {
+    color: #585858ff;
+    border-radius: 5px;
+}
+
+.nav {
+    margin-bottom: 75px;
+}
+
+.nav a, #addAddress{
+    margin-top: 30px;
+    color: #E4E4E4;
+    font-size: 16px;
+}
+
+.nav a:hover, #logout:hover, #addAddress:hover {
+    color: #585858ff;
+    transition-duration: .2s;
+}
+
+.table {
+    margin-bottom: 100px;
+}
+
+.address {
+    margin-top: 25px;
+}
+
+.tableBtn {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    background-color: transparent;
+    color: #E4E4E4;
+}
+
+.tableBtn:hover {
+    background-color: transparent;
+    cursor: pointer;
+    color: #585858ff;
+}
+
+.tableBtn:focus {
+    background-color: transparent;
+}
+
+.manage_td {
+    margin-top: 12.5px !important;
+}
+
+.manageAnchor {
+    padding-top: 10px !important;
+    background-color: transparent;
+    color: #E4E4E4;
+}
+
+.manageAnchor:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.manage_td {
+    padding-top: 0px !important;
+}
+
+.visitingBtn {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    background-color: transparent;
+    color: #E4E4E4;
+    height: auto;
+}
+
+.visitingBtn:hover {
+    background-color: transparent;
+}
+
