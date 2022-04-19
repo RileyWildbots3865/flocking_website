@@ -2,6 +2,10 @@ span {
     margin-top: 12px;
 }
 
+tr {
+    height: 75px;
+}
+
 i:hover {
     color: red;
     transition-duration: .5s; 
