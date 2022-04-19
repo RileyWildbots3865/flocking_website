@@ -31,16 +31,16 @@
             </div>
             <div class="col s12 m12 flockInfo">
                 <!-- FID -->
-                <h4 class="col m4"><span>FID: </span><span id="fid" class="data"></span></h4>
+                <h4 class="col s12 m4"><span>FID: </span><span id="fid" class="data"></span></h4>
                 <!-- Status -->
-                <h4 class="col m4 offset-m2"><span>Status: </span><span id="status" class="data"></span></h4>
+                <h4 class="col s12 m4 offset-m2"><span>Status: </span><span id="status" class="data"></span></h4>
                 <div>
-                    <div class="col m12 info">
+                    <div class="col s12 m12 info">
                         <div class="divide">
                             <!-- Current Location -->
-                            <p class="col m6"><span>Current Location: <button class="editBtn" id="CurrentLocationEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="currentLocation" class="data"></span></p>
+                            <p class="col s12 m6"><span>Current Location: <button class="editBtn" id="CurrentLocationEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="currentLocation" class="data"></span></p>
                             <!-- Migration Location -->
-                            <p class="col m6"><span>Migration Location: <button class="editBtn" id="MigrationLocationEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="migrationLocation" class="data"></span></p>
+                            <p class="col s12 m6"><span>Migration Location: <button class="editBtn" id="MigrationLocationEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="migrationLocation" class="data"></span></p>
 
                             <div class="col m12">
                                 <!-- Current Location Edit -->
@@ -51,9 +51,9 @@
                         </div>
                         <div class="divide">
                             <!-- Arrival Date -->
-                            <p class="col m6"><span>Arrival Date: <button class="editBtn" id="ArrivalDateEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="arrivalDate" class="data"></span></p>
+                            <p class="col s12 m6"><span>Arrival Date: <button class="editBtn" id="ArrivalDateEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="arrivalDate" class="data"></span></p>
                             <!-- Migration Date -->
-                            <p class="col m6"><span>Migration Date: <button class="editBtn" id="MigrationDateEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="migrationDate" class="data"></span></p>
+                            <p class="col s12 m6"><span>Migration Date: <button class="editBtn" id="MigrationDateEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="migrationDate" class="data"></span></p>
 
                             <div class="col m12">
                                 <!-- Arrival Date Edit -->
@@ -64,9 +64,9 @@
                         </div>
                         <div class="divide">
                             <!-- Flocker -->
-                            <p class="col m6"><span>Flocker: <button class="editBtn" id="FlockerEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="flocker" class="data"></span></p>
+                            <p class="col s12 m6"><span>Flocker: <button class="editBtn" id="FlockerEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="flocker" class="data"></span></p>
                             <!-- Flockee -->
-                            <p class="col m6"><span>Flockee: <button class="editBtn" id="FlockeeEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="flockee" class="data"></span></p>
+                            <p class="col s12 m6"><span>Flockee: <button class="editBtn" id="FlockeeEditBtn"><i class="material-icons tiny">edit</i></button></span><br><span id="flockee" class="data"></span></p>
 
                             <div class="col m12">
                                 <!-- Flocker Edit -->
@@ -77,7 +77,7 @@
                         </div>
                         <div class="divide">
                             <!-- Flock Managers -->
-                            <p class="col m6"><span>Flock Manager(s): <a class="tooltipped" data-position="right" data-tooltip="Click Flock Manager name below to remove from manager list."><i class="material-icons tiny" style="color: black;">info</i></a> <button class="editBtn" id="FlockManagerEditBtn"><i class="material-icons tiny">edit</i></button><br></span><span id="flockManagers" class="data"></span></p>
+                            <p class="col s12 m6"><span>Flock Manager(s): <a class="tooltipped" data-position="right" data-tooltip="Click Flock Manager name below to remove from manager list."><i class="material-icons tiny" style="color: black;">info</i></a> <button class="editBtn" id="FlockManagerEditBtn"><i class="material-icons tiny">edit</i></button><br></span><span id="flockManagers" class="data"></span></p>
 
                             <div class="col m12">
                                 <!-- Flock Mangers Edit -->
@@ -86,12 +86,12 @@
                         </div>
                     </div>
                     <div class="col m12 map">
-                        <div class="col m6">
-                            <iframe src="" id="currentLocationMap" style="border:0" height="350" width="500" allowfullscreen></iframe>
+                        <div class="col s12 m6">
+                            <iframe src="" id="currentLocationMap" style="border:0" height="350" width="100%" allowfullscreen></iframe>
                             <span>CURRENT LOCATION</span>
                         </div>
-                        <div class="col m6">
-                            <iframe src="" id="migrationLocationMap" style="border:0" height="350" width="500" allowfullscreen></iframe>
+                        <div class="col s12 m6">
+                            <iframe src="" id="migrationLocationMap" style="border:0" height="350" width="100%" allowfullscreen></iframe>
                             <span style="display: none; color: red;" class="noMigration">NO MIGARIOTN LOCATION AS OF NOW</span>
                             <span>MIGRATION LOCATION</span>
                         </div>
