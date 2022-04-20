@@ -37,6 +37,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
         onValue(dbRef, (snapshot) => {
             $("#peopleTableBody").empty();
             let data = snapshot.val();
+            console.log(data);
             for(let i in data){
                 let canDrive;
                 let hasVehcile;
@@ -65,6 +66,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
                 let name_td = document.createElement("td");
                 name_td.textContent = data[i].Information.FirstName + " " + data[i].Information.LastName;
                 name_td.classList.add('col');
+                name_td.classList.add("s2");
                 name_td.classList.add("m3");
                 tr.appendChild(name_td);
 
@@ -74,6 +76,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
                 let manage_li = document.createElement("li");
                 flock_td.appendChild(flock_ul);
                 flock_td.classList.add("col");
+                flock_td.classList.add("s4");
                 flock_td.classList.add("m2");
                 flock_td.classList.add("center");
                 flock_td.classList.add("flocks");
@@ -110,6 +113,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
                 let canDrive_td = document.createElement("td");
                 let canDriveBtn = document.createElement("button")
                 canDrive_td.classList.add('col');
+                canDrive_td.classList.add("s2");
                 canDrive_td.classList.add("m2");
                 canDrive_td.classList.add("center");
                 canDriveBtn.textContent = canDrive;
@@ -124,6 +128,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
                 let hasVehicle_td = document.createElement("td");
                 let hasVehcileBtn = document.createElement("button");
                 hasVehicle_td.classList.add('col');
+                hasVehicle_td.classList.add("s2");
                 hasVehicle_td.classList.add("m2");
                 hasVehicle_td.classList.add("center");
                 hasVehcileBtn.textContent = hasVehcile;
@@ -138,6 +143,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
                 let removalEmail_td = document.createElement("td");
                 let removalEmailBtn = document.createElement("button");
                 removalEmail_td.classList.add('col');
+                removalEmail_td.classList.add("s2");
                 removalEmail_td.classList.add("m3");
                 removalEmail_td.classList.add("center");
                 removalEmailBtn.textContent = removalEmail;
