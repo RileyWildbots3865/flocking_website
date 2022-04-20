@@ -6,6 +6,14 @@ button:active, button:focus{
     background-color: none !important;
 }
 
+#login {
+    padding: 0px !important;
+}
+
 .loginFooter {
 
+}
+
+.contain {
+    height: 100vh;
 }

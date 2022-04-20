@@ -1,3 +1,9 @@
+@media screen and (max-width: 800px) {
+    tr {
+        height: 110px !important;
+    }
+}
+
 span {
     margin-top: 12px;
 }
@@ -37,7 +43,7 @@ i:hover {
 }
 
 .people {
-    height: 80vh;
+    height: auto;
 }
 
 .true {
