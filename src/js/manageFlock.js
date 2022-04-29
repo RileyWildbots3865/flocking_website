@@ -66,8 +66,6 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
                 currentAdxdressMod = modifyAddress(data.CurrentLocation);
             }
 
-            console.log(data.CurrentLocation, data.MigrationLocation)
-
             $("#fid").append(fid);
             $("#status").append(data.Status);
             if(!data.CurrentLocation){
@@ -131,6 +129,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
         $(".modal").modal();
         $("#logout").on("click", logout);
         $(".tooltipped").tooltip();
+        $('#nest').on("click", nest);
 
         $(document.body).on("click", ".removeFlockManager", removeManager);
         $(".editBtn").on("click", displayEdit);
@@ -140,6 +139,26 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
                 edit(e.target.getAttribute("id"));
             }
         })
+    }
+
+    function nest(){
+        let dbRef = ref(database, "Flocks/" + fid + "/Status");
+        runTransaction(dbRef, (transaction) => {
+            transaction = "nested";
+            return transaction;
+        }).then(() => {
+            let dbRef = ref(database, "Flocks/" + fid + "/MigrationLocation");
+            runTransaction(dbRef, (transaction) => {
+                transaction = "";
+                return transaction;
+            }).then(() => {
+                let dbRef = ref(database, "Flock/" + fid + "/CurrentLocation");
+                runTransaction(dbRef, (transaction) => {
+                    transaction = nestLocation;
+                    return transaction;
+                })
+            })
+        });
     }
 
     function removeManager(){
@@ -193,12 +212,42 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
         $("#" + path_portion + "Edit").text(" ");
         $("#" + path_portion + "Edit").css("visibility", "hidden");
 
-        // Firebase reference and transaction
-        let dbRef = ref(database, "Flocks/" + fid + "/" + path_portion);
-        runTransaction(dbRef, (transaction) => {
-            transaction = value;
-            return transaction;
-        })
+        if(path_portion === "CurrentLocation"){
+            let currentAddressAndFID = $("#currentLocation").text() + "/" + fid;
+            let newAddressAndFID = value + "/" + fid;
+            let dbRef = ref(database, "VisitingAddresses");
+
+            console.log(currentAddressAndFID, newAddressAndFID);
+            runTransaction(dbRef, (transaction) => {
+                let temp_index;
+                for(let i in transaction){
+                    if(currentAddressAndFID === transaction[i]){
+                        console.log("working");
+                        // transaction[i] = newAddressAndFID;
+                        temp_index = i
+                        // return transaction;
+                    }
+                }
+
+                transaction[temp_index] = newAddressAndFID;
+                console.log(transaction);
+                return transaction;
+            }).then(() => {
+                // Firebase reference and transaction
+                let dbRef = ref(database, "Flocks/" + fid + "/" + path_portion);
+                runTransaction(dbRef, (transaction) => {
+                    transaction = value;
+                    return transaction;
+                })
+            });
+        }else{
+            // Firebase reference and transaction
+            let dbRef = ref(database, "Flocks/" + fid + "/" + path_portion);
+            runTransaction(dbRef, (transaction) => {
+                transaction = value;
+                return transaction;
+            })
+        }
     }
 
     // Toggle input box views

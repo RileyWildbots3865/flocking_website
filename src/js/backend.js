@@ -77,10 +77,24 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
                 let address_td = document.createElement("td");
                 address_td.textContent = address;
                 address_td.classList.add("col");
-                address_td.classList.add("m8");
+                address_td.classList.add("m6");
                 address_td.classList.add("center");
 
                 tr.appendChild(address_td);
+
+                let dbRef = ref(database, "Flocks/" + fid);
+                onValue(dbRef, (snapshot) => {
+                    let data = snapshot.val();
+
+                    // create td for arrival date
+                    let date_td = document.createElement("td");
+                    date_td.textContent = data.ArrivalDate;
+                    date_td.classList.add("col");
+                    date_td.classList.add("m2");
+                    date_td.classList.add("center");
+
+                    tr.appendChild(date_td);
+                });
 
                 // Craete td for "manage flock" button
                 let manageFlock_td = document.createElement("td");
