@@ -52,8 +52,41 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
             $("#location").text(data.NestLocation);
         });
 
+        let dbHistoryRef = ref(database, "History");
+        onValue(dbHistoryRef, (snapshot) => {
+            let data = snapshot.val();
+            for(let i in data){
+                let li = document.createElement("li");
+
+                let header = document.createElement("div");
+                header.classList.add("collapsible-header");
+                li.appendChild(header);
+
+                let p = document.createElement("p");
+                p.textContent = i;
+                header.appendChild(p);
+
+                let body = document.createElement("div");
+                body.classList.add("collapsible-body");
+                li.appendChild(body);
+
+                let ul = document.createElement("ul");
+                body.appendChild(ul);
+
+                for(let x in data[i]){
+                    console.log(data[i][x])
+                    let address_li = document.createElement("li");
+                    address_li.textContent = data[i][x];
+                    ul.appendChild(address_li);
+                }
+
+                $(".collapsible").append(li);
+            }
+        })
+
         $(".modal").modal();
         $(".dropdown-trigger").dropdown();
+        $('.collapsible').collapsible();
         $("#logout").on("click", logout);
         $(".migrationLength").on("click", changeLength);
 

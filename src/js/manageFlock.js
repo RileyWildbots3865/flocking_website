@@ -142,22 +142,35 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
     }
 
     function nest(){
-        let dbRef = ref(database, "Flocks/" + fid + "/Status");
+        let dbRef = ref(database, "Flocks/" + fid);
         runTransaction(dbRef, (transaction) => {
-            transaction = "nested";
+            console.log(transaction);
+            let obj = {
+                ArrivalDate: "",
+                CurrentLocation: nestLocation,
+                Flockee: "",
+                FLocker: "",
+                MigrationDate: "",
+                Status: "nested"
+            }
+
+            transaction = obj;
             return transaction;
         }).then(() => {
-            let dbRef = ref(database, "Flocks/" + fid + "/MigrationLocation");
+            let dbRef = ref(database, "VisitingAddresses");
             runTransaction(dbRef, (transaction) => {
-                transaction = "";
-                return transaction;
-            }).then(() => {
-                let dbRef = ref(database, "Flock/" + fid + "/CurrentLocation");
-                runTransaction(dbRef, (transaction) => {
-                    transaction = nestLocation;
-                    return transaction;
-                })
-            })
+                let obj = transaction;
+                console.log(obj);
+                for(let i in obj){
+                    let temp = obj[i].split("/");
+                    if(temp[1] === fid){
+                        obj.splice(i, 1);
+                        console.log(obj);
+                        transaction = obj;
+                        return transaction;
+                    }
+                }
+            });
         });
     }
 
