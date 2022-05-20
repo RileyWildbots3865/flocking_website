@@ -25,9 +25,31 @@ label {
 }
 
 .settings {
-    height: 50vh;
+    height: auto;
 }
 
 .info {
     padding-bottom: 60px !important;
 }
+
+.collapsible {
+    border: none !important;
+}
+
+.collapsible-header {
+    border-bottom: none !important;
+    padding-bottom: 40px !important;
+}
+
+.collapsible li .collapsible-header {
+    background-color: transparent;
+    color: #E4E4E4;
+    height: 50px;
+}
+
+.collapsible li .collapsible-header p {
+    font-size: 18px;
+    margin: 0px !important;
+}
+
+
